@@ -12,7 +12,12 @@
     "@sveltejs/kit": "next",
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
-    "svelte": "^3.34.0"
+    "svelte": "^3.38.2"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "bootstrap": "^5.0.1",
+    "react-bootstrap": "^1.6.1",
+    "sveltestrap": "^5.2.1"
+  }
 }
