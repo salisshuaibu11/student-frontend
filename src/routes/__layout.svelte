@@ -13,15 +13,15 @@
 
 				<Nav class="justify-content-end">
 					<Nav>
-						<a to="/create-student" class="nav-link"> Create Student </a>
+						<a href="/create-student" class="nav-link"> Create Student </a>
 					</Nav>
 
 					<Nav>
-						<a to="/edit-student" class="nav-link"> Edit Student </a>
+						<a href="/edit-student/:id" class="nav-link"> Edit Student </a>
 					</Nav>
 
 					<Nav>
-						<a to="/" class="nav-link"> Student List </a>
+						<a href="/" class="nav-link"> Student List </a>
 					</Nav>
 				</Nav>
 			</Container>

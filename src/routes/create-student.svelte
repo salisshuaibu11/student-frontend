@@ -1,15 +1,35 @@
 <script>
 	import { Form, FormGroup, Input, Label, Button } from 'sveltestrap/src';
+	import students from '../student-store';
+	import axios from 'axios';
 
 	let name = '';
 	let email = '';
 	let rollno = '';
 
-	$: console.log(rollno);
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		const studentData = {
+			name: name,
+			email: email,
+			rollno: rollno
+		};
+
+		try {
+			const response = await axios.post(
+				'http://localhost:4000/students/create-student',
+				studentData
+			);
+			const student = response.data;
+			students.createStudent(student);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 </script>
 
 <div class="form-wrapper">
-	<Form>
+	<Form on:submit={handleSubmit}>
 		<FormGroup id="name">
 			<Label for="name">Name</Label>
 			<Input bind:value={name} type="text" name="name" id="name" placeholder="Enter your name" />
